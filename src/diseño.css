@@ -1,0 +1,80 @@
+*{
+    background-color: #93f;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+#navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: teal 5px solid;
+    background-color: #a2f;
+    height: 45px;
+    width: 750px;
+    margin: 5px;
+}
+
+#barraInicio {
+    background-color: yellow    ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#logoBajada {
+    background-color: yellow;
+}
+
+#root {
+    
+    background-color: #19f;
+}
+
+h1, h4 {
+    margin: 0 ;
+    padding: 5px;
+    background-color: yellow;
+}
+
+.navBarMenu {
+    margin: 2px;
+    width: 160px;
+    padding: 2px;
+}
+
+.navBarMenu:hover {
+    background-color: yellow;
+}
+
+.algo {
+    background-color: salmon;
+}
+
+#aplicacion {
+    background-color: black;
+    height: 150px;
+}
+
+@media screen and (min-width : 700px) {
+    #aplicacion {
+        background-color: white;
+        height: 200px;
+    }
+}
+
+#contador {
+    width: 100px;
+    background-color: #19a;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
