@@ -1,27 +1,46 @@
 import { useState } from "react";
 
 
-const Contador = () => {
+const Contador = ({stock, onAdd, initial}) => {
     
-    let initial = 0
     const [contador , setContador] = useState(initial);
+
+    const [mensaje , setMensaje] = useState(onAdd);
 
     console.log(contador);
 
     function sumarContador () {
         setContador(contador + 1);
+        console.log(contador);
+        
+        if (contador + 1 > stock) {
+            setMensaje (` no hay stock `)
+        } else if (contador + 1 <= stock) {
+            setMensaje (onAdd);
+        }
+        ;
     }
 
     function restarContador () {
-        setContador(contador - 1);
+        setContador(contador - 1)
+        console.log(contador);
+        
+        if (contador - 1 > stock) {
+            setMensaje (` no hay stock `)
+        } else if (contador - 1 <= stock) {
+            setMensaje (onAdd);
+        }
     }
 
+    function verStock () {
+    }
     
-    return (<>
+    return (<div className="contador contador-botones">
                 <p>{contador}</p>
                 <button onClick={sumarContador}>+</button>
                 <button onClick={restarContador}>-</button>
-            </>
+                <button onClick={verStock}>{mensaje}</button>
+            </div>
     );
 }
 

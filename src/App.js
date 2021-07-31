@@ -17,8 +17,8 @@ const App = () => {
                     <NavBar />
                     <ItemListContainer greeting = "Accede a todo nuestro contenido"/>
                 </div>
-                <div div id="contador">
-                    <Contador/>
+                <div className="contador">
+                    <Contador stock={5} initial={1} onAdd="Agregar al carrito"/>
                 </div>
             </div>
     );
