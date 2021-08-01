@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-const Contador = ({stock, onAdd, initial}) => {
+const ItemCount = ({stock, onAdd, initial}) => {
     
     const [contador , setContador] = useState(initial);
 
@@ -36,6 +36,11 @@ const Contador = ({stock, onAdd, initial}) => {
     }
     
     return (<div className="contador contador-botones">
+                <select name="Productos" id="nombreProductos">
+                    <option value="1">Remera</option>
+                    <option value="2">Buzo</option>
+                    <option value="3">Mochila</option>
+                </select>
                 <p>{contador}</p>
                 <button onClick={sumarContador}>+</button>
                 <button onClick={restarContador}>-</button>
@@ -44,4 +49,4 @@ const Contador = ({stock, onAdd, initial}) => {
     );
 }
 
-export default Contador
+export default ItemCount

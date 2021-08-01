@@ -66,7 +66,6 @@ h1, h4 {
 }
 
 .contador {
-    width: 300px;
     background-color: #19a;
 
     display: flex;
@@ -82,4 +81,24 @@ h1, h4 {
 .contador-botones{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+.productos{
+    background: scroll 5px #19a;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul , li {
+    list-style: none;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+
+    width: 420px;
 }

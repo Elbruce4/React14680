@@ -1,6 +1,6 @@
 import NavBar from "./componentes/Navbar/Navbar";
 
-import Contador from "./componentes/Contador/Contador";
+import ItemCount from "./componentes/ItemCount/ItemCount";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 
 import "./diseño.css"
@@ -15,10 +15,12 @@ const App = () => {
                         <h4>Periodismo poco serio</h4>
                     </div>
                     <NavBar />
+                </div>
+                <div className="productos">
                     <ItemListContainer greeting = "Accede a todo nuestro contenido"/>
                 </div>
                 <div className="contador">
-                    <Contador stock={5} initial={1} onAdd="Agregar al carrito"/>
+                    <ItemCount stock={5} initial={1} onAdd="Agregar al carrito"/>
                 </div>
             </div>
     );
