@@ -40,11 +40,12 @@ const ItemCount = ({stock, onAdd, initial}) => {
                     <option value="1">Remera</option>
                     <option value="2">Buzo</option>
                     <option value="3">Mochila</option>
+                    <option value="4">Zapatillas</option>
                 </select>
                 <p>{contador}</p>
-                <button onClick={sumarContador}>+</button>
+                <button onClick={sumarContador} >+</button>
                 <button onClick={restarContador}>-</button>
-                <button onClick={verStock}>{mensaje}</button>
+                <button onClick={verStock} className="botonesCompra">{mensaje}</button>
             </div>
     );
 }

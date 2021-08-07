@@ -4,6 +4,7 @@ import ItemCount from "./componentes/ItemCount/ItemCount";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 
 import "./diseño.css"
+import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 
 const App = () => {
    
@@ -18,6 +19,7 @@ const App = () => {
                 </div>
                 <div className="productos">
                     <ItemListContainer greeting = "Accede a todo nuestro contenido"/>
+                    <ItemDetailContainer />
                 </div>
                 <div className="contador">
                     <ItemCount stock={5} initial={1} onAdd="Agregar al carrito"/>

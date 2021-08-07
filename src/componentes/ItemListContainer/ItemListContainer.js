@@ -1,9 +1,9 @@
-import Item from "./Item"
+import ItemList from "./ItemList"
 
 const itemListContainer = (pros) => 
         <div className="productos">
             {console.log(pros.greeting)}
-            <Item />
+            <ItemList />
         </div>
 
 export default itemListContainer
