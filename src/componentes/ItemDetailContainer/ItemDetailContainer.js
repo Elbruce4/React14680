@@ -1,7 +1,9 @@
 import { useState , useEffect} from "react";
 import ItemDetail from "./ItemDetail";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({match}) => {
+
+    console.log(match)
 
     const [producto , setProducto] = useState([]);
 
@@ -9,8 +11,8 @@ const ItemDetailContainer = () => {
         {
             id : 4,
             nombre : "Zapatillas",
-            descripcion : "Zapatos de plataforma",
-            precio : 500
+            descripcion : "Zapatillas con plataforma",
+            precio : 2000
         }]
 
     useEffect (()=>{

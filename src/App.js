@@ -1,5 +1,6 @@
 import NavBar from "./componentes/Navbar/Navbar";
-
+import {BrowserRouter} from "react-router-dom"
+import { Route , NavLink , Switch } from "react-router-dom";
 import ItemCount from "./componentes/ItemCount/ItemCount";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 
@@ -9,22 +10,38 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailCon
 const App = () => {
    
 
-    return (<div className="app">
+    return (<BrowserRouter>
+            <div className="app">
                 <div id="barraInicio">
                     <div id="logoBajada">
-                        <h1>Jarana</h1>
+                        <NavLink to="/">   
+                        <h1>Jarana</h1>                        
+                        </NavLink>
                         <h4>Periodismo poco serio</h4>
                     </div>
                     <NavBar />
                 </div>
                 <div className="productos">
-                    <ItemListContainer greeting = "Accede a todo nuestro contenido"/>
-                    <ItemDetailContainer />
+                    <h3>Somos el store digital de Jarana TV. Todos nuestros productos son oficiales y fabricados por la misma compañia</h3>
+                    
+                    <NavLink to="/listaProductos">
+                        <p className="linksRouter">Ropa de vestir</p>
+                    </NavLink>
+                    
+                    <NavLink to="/item/4">
+                        <p className="linksRouter">Calzado</p>
+                    </NavLink>
+                    <Switch>
+                        <Route path="/category/:id" component={ItemListContainer} />
+                        <Route path="/listaProductos" component={ItemListContainer}/>
+                        <Route path="/item/:id" component={ItemDetailContainer} /> 
+                    </Switch>
                 </div>
                 <div className="contador">
                     <ItemCount stock={5} initial={1} onAdd="Agregar al carrito"/>
                 </div>
             </div>
+            </BrowserRouter>
     );
 }
 

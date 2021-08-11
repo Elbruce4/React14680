@@ -1,8 +1,6 @@
 
 const Item = ({data}) =>{
 
-    console.log(data);
-
     return (
         <div className="productos lista">
         <li>{data.nombre}</li>

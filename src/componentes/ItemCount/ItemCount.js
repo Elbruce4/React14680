@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState , useEffect } from "react";
 
 const ItemCount = ({stock, onAdd, initial}) => {
     
@@ -9,26 +8,28 @@ const ItemCount = ({stock, onAdd, initial}) => {
 
     console.log(contador);
 
+
     function sumarContador () {
-        setContador(contador + 1);
-        console.log(contador);
-        
-        if (contador + 1 > stock) {
+        if (contador > stock) {
             setMensaje (` no hay stock `)
-        } else if (contador + 1 <= stock) {
+        } else if (contador < stock) {
             setMensaje (onAdd);
+            setContador(contador + 1)
+        } else if (contador === stock) {
+            setMensaje(`no hay más stock`)
         }
-        ;
     }
 
     function restarContador () {
-        setContador(contador - 1)
-        console.log(contador);
         
-        if (contador - 1 > stock) {
+        if (contador > stock) {
             setMensaje (` no hay stock `)
-        } else if (contador - 1 <= stock) {
-            setMensaje (onAdd);
+            setContador(contador - 1)
+        } else if (contador <= stock && contador > 1) {
+            setMensaje (onAdd);            
+            setContador(contador - 1)
+        } else if (contador <= 1) {
+            setMensaje("Mínimo tienes que comprar un elemento")
         }
     }
 
@@ -46,6 +47,8 @@ const ItemCount = ({stock, onAdd, initial}) => {
                 <button onClick={sumarContador} >+</button>
                 <button onClick={restarContador}>-</button>
                 <button onClick={verStock} className="botonesCompra">{mensaje}</button>
+
+
             </div>
     );
 }

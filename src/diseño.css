@@ -66,7 +66,6 @@ h1, h4 {
 }
 
 .contador {
-    background-color: #19a;
     width: 500px;
 
     display: flexbox;
@@ -86,11 +85,10 @@ h1, h4 {
 }
 
 .productos{
-    background: scroll 5px #19a;
-    
+    border: black solid 2px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: space-between;
 }
 
@@ -107,4 +105,15 @@ ul , li {
 
 .botonesCompra {
     width: 200px;
+}
+
+.linksRouter{
+    border: black;
+    margin: 20px;
+    padding: 5px;
+    height: 50px;
+    background-color: yellow;
+    display: flex;
+    font-family: 'Nanum Gothic Coding', monospace;
+    justify-content: center;
 }
