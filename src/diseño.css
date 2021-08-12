@@ -26,6 +26,8 @@
 
 #logoBajada {
     background-color: yellow;
+    display: flex;
+    flex-direction: row;
 }
 
 #root {
@@ -87,9 +89,9 @@ h1, h4 {
 .productos{
     border: black solid 2px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 ul , li {
@@ -107,6 +109,12 @@ ul , li {
     width: 200px;
 }
 
+#presentacion{
+    
+    display: flex;
+    justify-content: center;
+}
+
 .linksRouter{
     border: black;
     margin: 20px;
@@ -116,4 +124,9 @@ ul , li {
     display: flex;
     font-family: 'Nanum Gothic Coding', monospace;
     justify-content: center;
+}
+
+img {
+    width: 130px;
+    height: 100px;
 }

@@ -12,28 +12,13 @@ const App = () => {
 
     return (<BrowserRouter>
             <div className="app">
-                <div id="barraInicio">
-                    <div id="logoBajada">
-                        <NavLink to="/">   
-                        <h1>Jarana</h1>                        
-                        </NavLink>
-                        <h4>Periodismo poco serio</h4>
-                    </div>
-                    <NavBar />
-                </div>
+                <NavBar />
                 <div className="productos">
-                    <h3>Somos el store digital de Jarana TV. Todos nuestros productos son oficiales y fabricados por la misma compañia</h3>
-                    
-                    <NavLink to="/listaProductos">
-                        <p className="linksRouter">Ropa de vestir</p>
-                    </NavLink>
-                    
-                    <NavLink to="/item/4">
-                        <p className="linksRouter">Calzado</p>
-                    </NavLink>
-                    <Switch>
+                    <h3 id="presentacion">Somos el store digital de Jarana TV. Todos nuestros 
+                    productos son oficiales y fabricados por la misma compañia</h3>
+                    <Switch>  
+                        <Route path="/" exact component={ItemListContainer} />
                         <Route path="/category/:id" component={ItemListContainer} />
-                        <Route path="/listaProductos" component={ItemListContainer}/>
                         <Route path="/item/:id" component={ItemDetailContainer} /> 
                     </Switch>
                 </div>

@@ -8,15 +8,21 @@ const NavBar = (props) => {
  return (
           <nav >
             <cart id="navBar">
-
-            <h2 className = "navBarMenu" onClick={props.lie}>Inicio</h2>
+              <div id="barraInicio">
+                          <NavLink to="/">   
+                          <h1>Jarana</h1>                        
+                          </NavLink>
+              </div>
             
-            <NavLink to="/category/2">
-            <p  id="inicioTitulo" className = "navBarMenu">Oferta del día</p>
+            <NavLink to="/category/1">
+              <p  id="inicioTitulo" className = "navBarMenu">Ropa</p>
             </NavLink>
-
-            <p className = "navBarMenu">Programas</p>
-            <p className = "navBarMenu">Unite a la comunidad</p>
+            <NavLink to="/category/2">
+              <p className ="navBarMenu">Accesorios</p>
+            </NavLink>
+            <NavLink to="/category/3">
+              <p className = "navBarMenu">Calzado</p>
+            </NavLink>
             <CartWidget/>
 
             </cart>
