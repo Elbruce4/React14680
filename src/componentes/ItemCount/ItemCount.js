@@ -1,12 +1,15 @@
-import { useState  } from "react";
+import { Children, useEffect, useState  } from "react";
+import { NavLink } from "react-router-dom";
 
 const ItemCount = ({stock, onAdd, initial}) => {
+
     
     const [contador , setContador] = useState(initial);
 
     const [mensaje , setMensaje] = useState(onAdd);
+    const [ carrito , setCarrito] = useState();
+    const [ ver, setVer ] = useState(false)
 
-    console.log(contador);
 
 
     function sumarContador () {
@@ -16,14 +19,14 @@ const ItemCount = ({stock, onAdd, initial}) => {
             setMensaje (onAdd);
             setContador(contador + 1)
         } else if (contador === stock) {
-            setMensaje(`no hay más stock`)
+            setMensaje(`No hay más stock`)
         }
     }
 
     function restarContador () {
         
         if (contador > stock) {
-            setMensaje (` no hay stock `)
+            setMensaje (`No hay más stock `)
             setContador(contador - 1)
         } else if (contador <= stock && contador > 1) {
             setMensaje (onAdd);            
@@ -33,24 +36,33 @@ const ItemCount = ({stock, onAdd, initial}) => {
         }
     }
 
-    function verStock () {
+    function verCarrito () {
+
+        setCarrito(contador);
+        setVer(true)
+
     }
-    
-    return (<div className="contador contador-botones">
-                <select name="Productos" id="nombreProductos">
-                    <option value="1">Remera</option>
-                    <option value="2">Buzo</option>
-                    <option value="3">Mochila</option>
-                    <option value="4">Zapatillas</option>
-                </select>
-                <p>{contador}</p>
-                <button onClick={sumarContador} >+</button>
-                <button onClick={restarContador}>-</button>
-                <button onClick={verStock} className="botonesCompra">{mensaje}</button>
 
+        if (ver === false) {
+        return (<div className="contador contador-botones">
+                        <p>{contador}</p>
+                        <button onClick={sumarContador} >+</button>
+                        <button onClick={restarContador}>-</button>
+                        <button onClick={verCarrito} className="botonesCompra">{mensaje}</button></div>)
+        } else if (ver === true) {
+        return(
+            <div>
 
-            </div>
-    );
+        <NavLink to="/cart">
+
+            <button>Terminar mi compra</button>
+
+        </NavLink>
+            
+        </div>
+    )
+    }                
+
 }
 
 export default ItemCount

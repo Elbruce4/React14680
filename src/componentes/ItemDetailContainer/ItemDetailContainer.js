@@ -1,9 +1,10 @@
-import { useState , useEffect , useParam} from "react";
+import { useState , useEffect } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-    const param = useParam()
+    let param = useParams();
     console.log(param)
 
     const [producto , setProducto] = useState([]);
@@ -96,7 +97,7 @@ const ItemDetailContainer = () => {
 
         setTimeout(()=>{
             new Promise ((resolve) =>{
-                resolve(productos.filter(obj=>obj.id == param.id))
+               resolve(productos.filter(obj=>obj.id == param.id))
             }).then(prod=>setProducto(prod))
         },2000)
     }

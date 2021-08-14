@@ -5,8 +5,6 @@ import { NavLink , useParams , Link} from "react-router-dom";
 
 const ItemListContainer = () => {
 
-    
-
     let param = useParams();
     console.log(param)
 
@@ -111,9 +109,7 @@ const ItemListContainer = () => {
     },[param]); 
 
     return (
-        <div className="productos">
             <ItemList data={data} />
-        </div>
     )
 }
 export default ItemListContainer
