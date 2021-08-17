@@ -1,6 +1,10 @@
 import ItemCount from "../ItemCount/ItemCount"; 
 
 const ItemDetail = ({data}) => {
+
+    function onAdd (prop) {
+        console.log(`El cliente agrego ` + prop + " productos")
+    }
     
     return (
         <div className="productos lista">
@@ -12,7 +16,7 @@ const ItemDetail = ({data}) => {
             <img src={data.url}/>
             </ul>
             <div /*className="contador"*/>
-                <ItemCount stock={data.stock} initial={1} onAdd="Agregar al carrito" children/>
+                <ItemCount stock={data.stock} initial={1} onAdd={onAdd} children producto={data.id}/>
             </div>
         </div>
     );
