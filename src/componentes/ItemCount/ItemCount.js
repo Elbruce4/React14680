@@ -18,7 +18,6 @@ const ItemCount = ({stock, onAdd, initial, producto}) => {
         } else if (contador < stock) {
             setMensaje ("Agregar al carrito");
             setContador(contador + 1)
-            onAdd(contador + 1)
         } else if (contador === stock) {
             setMensaje(`No hay más stock`)
         }
@@ -37,14 +36,16 @@ const ItemCount = ({stock, onAdd, initial, producto}) => {
         }
     }
 
+
+    console.log(producto)
+
     function verCarrito () {
 
         setVer(true)
+        onAdd(contador)
 
     }
 
-    const resultado = useContext(productos)
-    console.log(resultado)
 
         if (ver === false) {
             return (<div className="contador contador-botones">
@@ -55,13 +56,9 @@ const ItemCount = ({stock, onAdd, initial, producto}) => {
                     </div>)
         } else if (ver === true) {
             return( <div>
-
-                        <NavLink to="/cart">
-
-                            <button onClick={resultado(producto, contador)}>Terminar mi compra</button>
-
-                        </NavLink>
-                
+                        {<NavLink to="/cart">
+                            <button >Terminar mi compra</button>
+                        </NavLink>}                
                     </div>)
         }                
 

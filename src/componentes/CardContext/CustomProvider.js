@@ -1,34 +1,75 @@
 import productos from "./Context"
-import {useState} from "react"
+import {useEffect, useState} from "react"
 
 const {Provider} = productos
 
 const CustomProvider = ({children}) =>{
 
-    let compraCliente  = []
+    const [carrito, setCarrito] = useState([]);
 
-    const [productos , setProductos ] = useState()
-    const [stock , setStock] = useState()
-
-    
-    function compra (a , b) {
-        setProductos(a)
-        setStock(b)
+    const addItem = (item) => {
+        const nuevoCarrito = carrito.slice(0)
+        nuevoCarrito.push(item)
+        setCarrito(nuevoCarrito)
     }
 
-    console.log("El cliente eligio el producto con el id: " + productos)
+    const removeItem = (item) => {
+        const nuevoCarrito = carrito.filter(obj => obj.item.id !== item.item.id)
+        setCarrito(nuevoCarrito)
+        console.log(item)
+    }
 
+    const clear = () => {
+        setCarrito([])
+    }
 
-    compraCliente.push({
-        Producto : productos,
-        Cantidad : stock,
-    });
+    const isInCart = (id) => {
+        const mismoProducto = carrito.find(obj =>
+            obj.item.id === id.item.id)
+             if (mismoProducto) {
+                mismoProducto.cantidad = id.cantidad + mismoProducto.cantidad
+            } else {
+                addItem(id)
+            }
 
-    console.log(compraCliente)
+    }
 
+    useEffect (()=>{
+        console.log(carrito)
+    })
+
+/*    let compraCliente  = []
+
+    const [carrito, setCarrito] = useState([ ]);
+
+    function agregarAlCarrito (prod, stock) {
+        const yaExiste = carrito.find( (item) => item.id === prod.id);
+        if (!yaExiste) {
+            setCarrito([...carrito, {...prod, cantidad: stock}]);
+        } else {
+            const newProductos = carrito.map ( (item) => {
+                if (item.id === prod.id) {
+                    return {...item,...stock, cantidad: stock } 
+                } return item;
+            });
+            setCarrito(newProductos);
+        }
+    }
+
+    function clear () {
+        setCarrito([])
+    }
+
+    function removeItem (id) {
+        const borrar = carrito.filter(obj => obj.id !== id);
+        setCarrito(borrar)
+    }
+
+    console.log(compraCliente);
+    console.log(carrito)*/
 
     return(
-        <Provider value ={compra}>
+        <Provider value ={{carrito ,addItem, isInCart , clear , removeItem}}>
             {children}
         </Provider>
     )

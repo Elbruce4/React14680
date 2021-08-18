@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
 
     let param = useParams();
-    console.log(param)
 
     const [producto , setProducto] = useState([]);
 
@@ -105,9 +104,6 @@ const ItemDetailContainer = () => {
     getItems();
 
     }, [])
-
-
-    console.log(producto)
 
     return (
         <div className="productos">

@@ -5,6 +5,7 @@ import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer
 import "./diseño.css"
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 import CustomProvider from "./componentes/CardContext/CustomProvider";
+import ProductosContainer from "./componentes/Carrito/ProductosContainer";
 
 const App = () => {
    
@@ -20,6 +21,7 @@ const App = () => {
                                 <Route path="/" exact component={ItemListContainer} />
                                 <Route path="/category/:id" component={ItemListContainer} />
                                 <Route path="/item/:id" component={ItemDetailContainer} /> 
+                                <Route path="/cart" component={ProductosContainer} />
                             </Switch>
                         </div>
                     </div>

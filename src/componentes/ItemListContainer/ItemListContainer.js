@@ -6,7 +6,6 @@ import { NavLink , useParams , Link} from "react-router-dom";
 const ItemListContainer = () => {
 
     let param = useParams();
-    console.log(param)
 
     const [data , setData] = useState([])
 

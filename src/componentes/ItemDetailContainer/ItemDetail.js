@@ -1,9 +1,18 @@
 import ItemCount from "../ItemCount/ItemCount"; 
+import { useContext } from "react";
+import productos from "../CardContext/Context"
 
 const ItemDetail = ({data}) => {
 
-    function onAdd (prop) {
-        console.log(`El cliente agrego ` + prop + " productos")
+    const { isInCart } = useContext(productos)
+
+    function onAdd (cantidad) {
+        const item = {
+            item : data,
+            cantidad: cantidad
+        }
+        console.log(item)
+        isInCart(item)
     }
     
     return (
@@ -16,7 +25,7 @@ const ItemDetail = ({data}) => {
             <img src={data.url}/>
             </ul>
             <div /*className="contador"*/>
-                <ItemCount stock={data.stock} initial={1} onAdd={onAdd} children producto={data.id}/>
+                <ItemCount stock={data.stock} initial={1} onAdd={onAdd} producto={data}/>
             </div>
         </div>
     );
