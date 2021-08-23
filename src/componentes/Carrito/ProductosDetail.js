@@ -1,13 +1,17 @@
-import { useContext } from "react"
+import { useContext , useEffect } from "react"
 import productos from "../CardContext/Context"
-const ProductosDetail = ({data , borrarItem }) => {
+
+
+const ProductosDetail = ({data}) => {
 
     const {removeItem} = useContext(productos)
+
 
     return (
         <div>
             <p>Producto: {data.item.nombre}</p>
             <p>Precio: {data.item.precio * data.cantidad}</p>
+            <p>Unidades : {data.cantidad}</p>
             <img src={data.item.url} />
             <br />
             <br />

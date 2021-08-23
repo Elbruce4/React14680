@@ -31,43 +31,12 @@ const CustomProvider = ({children}) =>{
             } else {
                 addItem(id)
             }
-
     }
 
     useEffect (()=>{
         console.log(carrito)
     })
-
-/*    let compraCliente  = []
-
-    const [carrito, setCarrito] = useState([ ]);
-
-    function agregarAlCarrito (prod, stock) {
-        const yaExiste = carrito.find( (item) => item.id === prod.id);
-        if (!yaExiste) {
-            setCarrito([...carrito, {...prod, cantidad: stock}]);
-        } else {
-            const newProductos = carrito.map ( (item) => {
-                if (item.id === prod.id) {
-                    return {...item,...stock, cantidad: stock } 
-                } return item;
-            });
-            setCarrito(newProductos);
-        }
-    }
-
-    function clear () {
-        setCarrito([])
-    }
-
-    function removeItem (id) {
-        const borrar = carrito.filter(obj => obj.id !== id);
-        setCarrito(borrar)
-    }
-
-    console.log(compraCliente);
-    console.log(carrito)*/
-
+    
     return(
         <Provider value ={{carrito ,addItem, isInCart , clear , removeItem}}>
             {children}
