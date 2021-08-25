@@ -2,6 +2,8 @@ import Item from "./Item"
 
 const ItemList = ({data}) => {
 
+    console.log(data)
+
     return (
         <ul className="productos">
             { data.map(obj =>
