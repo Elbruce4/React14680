@@ -6,6 +6,7 @@ import "./diseño.css"
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 import CustomProvider from "./componentes/CardContext/CustomProvider";
 import ProductosContainer from "./componentes/Carrito/ProductosContainer";
+import ProductosContainerOrden from "./componentes/Carrito/ProductosContainerOrden"
 
 const App = () => {
    
@@ -22,6 +23,7 @@ const App = () => {
                                 <Route path="/category/:id" component={ItemListContainer} />
                                 <Route path="/item/:id" component={ItemDetailContainer} /> 
                                 <Route path="/cart" component={ProductosContainer} />
+                                <Route path="/orden" component={ProductosContainerOrden} />
                             </Switch>
                         </div>
                     </div>

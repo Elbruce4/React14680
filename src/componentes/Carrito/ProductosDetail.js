@@ -1,11 +1,10 @@
-import { useContext , useEffect } from "react"
+import { useContext } from "react"
 import productos from "../CardContext/Context"
 
 
 const ProductosDetail = ({data}) => {
 
     const {removeItem} = useContext(productos)
-
 
     return (
         <div>

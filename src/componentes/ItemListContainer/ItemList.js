@@ -9,7 +9,6 @@ const ItemList = ({data}) => {
             { data.map(obj =>
                 <Item data={obj}/>
             )}
-            
         </ul>
     );
 }

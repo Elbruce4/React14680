@@ -8,7 +8,7 @@ const CustomProvider = ({children}) =>{
     const [carrito, setCarrito] = useState([]);
 
     const addItem = (item) => {
-        const nuevoCarrito = carrito.slice(0)
+        const nuevoCarrito = [...carrito]
         nuevoCarrito.push(item)
         setCarrito(nuevoCarrito)
     }
@@ -37,7 +37,7 @@ const CustomProvider = ({children}) =>{
         console.log(carrito)
     })
     
-    return(
+    return (
         <Provider value ={{carrito ,addItem, isInCart , clear , removeItem}}>
             {children}
         </Provider>
