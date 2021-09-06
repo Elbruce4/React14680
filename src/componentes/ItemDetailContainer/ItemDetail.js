@@ -17,15 +17,15 @@ const ItemDetail = ({data}) => {
 
     
     return (
-        <div className="productos lista">
-            <ul className="productos lista">
-            <p className=" lista"> {data.nombre}</p>
-            <p className="lista">${data.precio}</p>
-            <p className="lista">{data.descripcion}</p>
-            <p className="lista">Cantidad de productos disponibles: {data.stock}</p>
-            <img src={data.url}/>
+        <div className="listaDetalle">
+            <ul className="listaDetalle">
+            <p className="listaDetalle"> {data.nombre}</p>
+            <p className="listaDetalle">${data.precio}</p>
+            <p className="listaDetalle">{data.descripcion}</p>
+            <p className="listaDetalle">Cantidad de productos disponibles: {data.stock}</p>
+            <img src={data.url} className="listaDetalle"/>
             </ul>
-            <div /*className="contador"*/>
+            <div className="contador">
                 <ItemCount stock={data.stock} initial={1} onAdd={onAdd} producto={data}/>
             </div>
         </div>

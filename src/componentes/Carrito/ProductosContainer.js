@@ -21,7 +21,7 @@ const ProductosContainer = () => {
         console.log(carrito)
     })
 
-    const buyer = {
+   /* const buyer = {
         nombre : "Bruno Lococo",
         telefono : 1155556467,
         email : "brunotest@gmail.com"
@@ -33,18 +33,15 @@ const ProductosContainer = () => {
         items : carrito,
         date : new Date(),
         total: precioTotal
-    }
+    } */
 
-    function newOrder () {
+    /*function newOrder () {
         console.log("entra")
         const db = firestore
         const collection = db.collection("ordenes")
         const query = collection.add(nuevaOrden)
-
-        const id = 0
-
         query.then(res => id = res.id)
-    }
+    } */
 
     return (
         <div>
@@ -53,7 +50,7 @@ const ProductosContainer = () => {
                 )}
             {carrito.length > 0 ? <button onClick={clear}>Vaciar todo el carrito</button> :  <NavLink to="/"><button> No hay nada en el carrito... Por ahora </button></NavLink> }
             <br />
-            {precioTotal > 0 ? <h4>El precio total es: ${precioTotal} <button onClick={newOrder}> <NavLink to="/orden"> Confirmar Compra </NavLink></button> </h4>  : null}
+            {precioTotal > 0 ? <h4>El precio total es: ${precioTotal} <button > <NavLink to=""> Confirmar Compra </NavLink></button> </h4>  : null}
         </div>
     )
 }

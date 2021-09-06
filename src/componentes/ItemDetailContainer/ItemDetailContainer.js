@@ -9,15 +9,18 @@ const ItemDetailContainer = () => {
 
     const [producto , setProducto] = useState([]);
 
-    console.log(param)
+    console.log(typeof param.id)
 
     useEffect (()=>{
 
-        const array = []
-
         const db = firestore
-        const collection = db.collection("Productos")
-        switch (parseInt(param.id)){
+        const collection = db.collection("Productos");
+        const query = collection.doc(param.id);
+        const queryData = query.get();
+        console.log(queryData)
+        queryData.then((res)=>{
+            setProducto(res.data())})
+        /*switch (parseInt(param.id)){
             case 1:
                 const query = collection.doc("xjLTtGF2MjcvZMHRd4g1")
                 const queryData = query.get();
@@ -81,7 +84,7 @@ const ItemDetailContainer = () => {
                 setProducto(res.data());
                 });
                 break;
-        }
+        }*/
 
     }, []);
 

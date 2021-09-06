@@ -12,7 +12,7 @@ const NavBar = (props) => {
             </NavLink>
         </div>
 
-        <div className="card">
+        <div >
 
           <NavLink to="/category/1">
             <p id="inicioTitulo" className = "navBarMenu">Ropa</p>
@@ -20,7 +20,7 @@ const NavBar = (props) => {
           
         </div>
 
-        <div className="card">
+        <div >
 
           <NavLink to="/category/2">
             <p className ="navBarMenu">Accesorios</p>
@@ -28,7 +28,7 @@ const NavBar = (props) => {
 
         </div>
 
-        <div className="card">
+        <div >
 
           <NavLink to="/category/3">
             <p className = "navBarMenu">Calzado</p>

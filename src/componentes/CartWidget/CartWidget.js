@@ -11,7 +11,7 @@ const CartWidget = () =>  {
     
     return (
             <NavLink to="/cart">
-                <div className="logo">
+                <div className="navBarMenu">
                     <FontAwesomeIcon icon={faStore}/>
                     {carrito.length > 0 ? carrito.length : null}
                 </div>
