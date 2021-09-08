@@ -5,9 +5,10 @@ import { firestore } from "../firebase";
 
 const ProductosContainerOrden = () => {
 
-    
+    console.log(`tamos`)
+
     const [ precioTotal , setPrecioTotal ] = useState(0)
-    const [ id , setId] = useState()
+    const [ id , setId ] = useState()
     const { carrito } = useContext(productos)
 
     let element = 0;
@@ -22,21 +23,23 @@ const ProductosContainerOrden = () => {
         email : "brunotest@gmail.com"
     }
 
-    const nuevaOrden = {
-        buyer : buyer,
-        items : carrito,
-        date : new Date(),
-        total: precioTotal
-    }
-
-    const db = firestore
-    const collection = db.collection("ordenes")
-    const query = collection.add(nuevaOrden)
-    query.then(res => setId(res.id))
 
     useEffect(()=>{
+        
         setPrecioTotal(element)
-    })
+
+        const nuevaOrden = {
+            buyer : buyer,
+            items : carrito,
+            date : new Date(),
+            total: precioTotal
+        }
+        const db = firestore
+        const collection = db.collection("Ordenes")
+        const query = collection.add(nuevaOrden)
+        query.then(obj=>setId(obj.id))
+
+    },[])
 
     return (
         <div>

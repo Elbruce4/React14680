@@ -1,5 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount"; 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import productos from "../CardContext/Context"
 
 const ItemDetail = ({data}) => {
@@ -11,11 +11,10 @@ const ItemDetail = ({data}) => {
             item : data,
             cantidad: cantidad
         }
-        console.log(item)
-        isInCart(item)
+        console.log(item);
+        isInCart(item);
     }
 
-    
     return (
         <div className="listaDetalle">
             <ul className="listaDetalle">

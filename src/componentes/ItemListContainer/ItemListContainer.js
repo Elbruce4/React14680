@@ -1,7 +1,6 @@
 import ItemList from "./ItemList"
 import { useState , useEffect } from "react"
 import { firestore } from "../firebase";
-
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
@@ -22,7 +21,7 @@ useEffect(()=>{
         dataQuery.then((res)=>{
             res.forEach((doc)=>{
                 array.push(doc.data());
-            })
+            });
             setData(array);
         });
     } else {

@@ -9,8 +9,6 @@ const ItemDetailContainer = () => {
 
     const [producto , setProducto] = useState([]);
 
-    console.log(typeof param.id)
-
     useEffect (()=>{
 
         const db = firestore

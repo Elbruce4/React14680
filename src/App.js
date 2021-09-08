@@ -10,7 +10,6 @@ import ProductosContainerOrden from "./componentes/Carrito/ProductosContainerOrd
 
 const App = () => {
    
-
     return (<CustomProvider>
                 <BrowserRouter>
                     <div className="app">
@@ -23,7 +22,7 @@ const App = () => {
                                 <Route path="/category/:id" component={ItemListContainer} />
                                 <Route path="/item/:id" component={ItemDetailContainer} /> 
                                 <Route path="/cart" component={ProductosContainer} />
-                                <Route path="/orden" component={ProductosContainerOrden} />
+                                <Route path="/order" component={ProductosContainerOrden} />
                             </Switch>
                         </div>
                     </div>

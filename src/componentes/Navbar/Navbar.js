@@ -1,15 +1,17 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 
-const NavBar = (props) => {
+const NavBar = () => {
 
  return (
     <div>
+
       <nav className="navBar">
+
         <div id="barraInicio">
-            <NavLink to="/">   
+          <NavLink to="/">   
             <h1 className="title">Jarana</h1>                        
-            </NavLink>
+          </NavLink>
         </div>
 
         <div >
@@ -37,7 +39,6 @@ const NavBar = (props) => {
         </div>
 
         <CartWidget/>
-
 
       </nav>
     </div>

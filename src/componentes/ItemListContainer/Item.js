@@ -1,8 +1,9 @@
-import { Link , NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Item = ({data}) =>{
 
     return (
+        
         <div className="lista">
             
                 <li className="listaDetalle"><p className="listaDetalle">{data.nombre}</p></li>
