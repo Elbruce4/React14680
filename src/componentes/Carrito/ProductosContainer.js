@@ -2,7 +2,6 @@ import { useContext , useEffect, useState } from "react"
 import productos from "../CardContext/Context"
 import ProductosDetail from "./ProductosDetail"
 import { NavLink } from "react-router-dom"
-import { firestore } from "../firebase";
 
 
 const ProductosContainer = () => {
@@ -19,12 +18,12 @@ const ProductosContainer = () => {
     useEffect(()=>{
         setPrecioTotal(element)
         console.log(carrito)
-    })
+    },[carrito])
 
     return (
         <div>
             {carrito.map(obj => 
-                <ProductosDetail key={obj.id} data={obj} />
+                <ProductosDetail key={obj.id} data={obj} carro={carrito} />
                 )}
             {carrito.length > 0 ? <button onClick={clear}>Vaciar todo el carrito</button> :  <NavLink to="/"><button> No hay nada en el carrito... Por ahora </button></NavLink> }
             <br />

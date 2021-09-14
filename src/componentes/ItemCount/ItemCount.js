@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState  } from "react";
+import {  useState  } from "react";
 import { NavLink } from "react-router-dom";
-import productos from "../CardContext/Context"
 
 
-const ItemCount = ({stock, onAdd, initial, producto}) => {
+const ItemCount = ({stock, onAdd, initial}) => {
 
     const [contador , setContador] = useState(initial);
     const [mensaje , setMensaje] = useState("Agregar al carrito");
-    const [ carrito , setCarrito] = useState();
     const [ ver, setVer ] = useState(false)
 
 
@@ -35,9 +33,6 @@ const ItemCount = ({stock, onAdd, initial, producto}) => {
             setMensaje("Mínimo tienes que comprar un elemento")
         }
     }
-
-
-    console.log(producto)
 
     function verCarrito () {
 

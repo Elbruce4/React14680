@@ -19,6 +19,14 @@ const CustomProvider = ({children}) =>{
         console.log(item)
     }
 
+    const removeCantidadItem = (item , stock) => {
+        const nuevoCarrito = carrito.filter(obj => obj.item.id !== item.item.id)
+        const segundoCarrito = carrito.find(obj => obj.item.id === item.item.id)
+        segundoCarrito.cantidad = parseInt(stock);
+        nuevoCarrito.push(segundoCarrito)
+        setCarrito(nuevoCarrito)
+    }   
+
     const clear = () => {
         setCarrito([])
     }
@@ -38,7 +46,7 @@ const CustomProvider = ({children}) =>{
     })
     
     return (
-        <Provider value ={{carrito ,addItem, isInCart , clear , removeItem}}>
+        <Provider value ={{carrito ,addItem, isInCart , clear , removeItem , removeCantidadItem}}>
             {children}
         </Provider>
     )

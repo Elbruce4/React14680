@@ -1,15 +1,15 @@
 
 import productos from "../CardContext/Context"
 import { useState , useContext, useEffect } from "react";
-import { firestore } from "../firebase";
+import Formulario from "./Formulario";
 
 const ProductosContainerOrden = () => {
 
     console.log(`tamos`)
-
-    const [ precioTotal , setPrecioTotal ] = useState(0)
-    const [ id , setId ] = useState()
     const { carrito } = useContext(productos)
+    const [ precioTotal , setPrecioTotal ] = useState(0)
+   /* const [ id , setId ] = useState()
+    const { carrito , clear } = useContext(productos) */
 
     let element = 0;
     for (let i = 0; i < carrito.length; i++) {
@@ -28,23 +28,23 @@ const ProductosContainerOrden = () => {
         
         setPrecioTotal(element)
 
-        const nuevaOrden = {
+       /* const nuevaOrden = {
             buyer : buyer,
             items : carrito,
             date : new Date(),
             total: precioTotal
         }
-        const db = firestore
-        const collection = db.collection("Ordenes")
-        const query = collection.add(nuevaOrden)
-        query.then(obj=>setId(obj.id))
+            const db = firestore
+            const collection = db.collection("Ordenes")
+            const query = collection.add(nuevaOrden)
+            query.then(obj=>setId(obj.id))
 
+            clear() */
     },[])
 
     return (
         <div>
-            <p>Su compra finalizo</p>
-            <p>El número es: {id}</p>
+            <Formulario  precioTotal={precioTotal} />
         </div>
     )
 }

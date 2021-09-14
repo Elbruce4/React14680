@@ -1,15 +1,21 @@
 *{
-    background-color: #93f;
     font-family: 'Nanum Gothic Coding', monospace;
 }
 
+#root{
+    background-color: #ddd;
+}
+
+p{
+    color: #fff(216, 210, 210);
+}
 .navBar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     border: teal 5px solid;
-    background-color: #a2f;
+    background-color: #365;
     height: 45px;
     margin: 10px;
     background-color: #71f;
@@ -95,6 +101,7 @@ h1, h4 {
 .app {
     display: flex;
     flex-direction: column;
+    background-color: #ddd;
 }
 
 .contador-botones{
@@ -119,14 +126,15 @@ ul , li {
 .lista{
     width: 150px;
     height: 450px;
-    background-color: teal;
+    background-color: #365;
     border: black solid 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2px;
+    margin: 5px;
     width: 500px;
+    padding: 5px;
 }
 
 .botonesCompra {
@@ -162,8 +170,40 @@ img {
 }
 
 .listaDetalle {
-    background-color: teal;
+    margin: 2px;
+    background-color: #365;
     display: flexbox;
     justify-content: center;
     align-items: center;
+}
+
+.formulario{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border: #111 solid 2px;
+}
+
+.nombreForm {
+    margin: 2px;
+    width: 200px;
+    height: 30px;
+    color: black;
+}
+
+.emailForm{
+    width: 200px;
+    height: 30px;
+}
+.telefonoForm{
+    width: 200px;
+    height: 30px;
+}
+
+::placeholder{
+    color: #444;
+}
+
+.divNavBa{
+    background-color:#365 ;
 }

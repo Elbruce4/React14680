@@ -9,22 +9,22 @@ const ItemListContainer = () => {
 
     const [data , setData] = useState([]);
 
-useEffect(()=>{
+    useEffect(()=>{
 
-    const array = [];
+        const array = [];
 
-    const db = firestore;
-    const collection = db.collection("Productos");
-    if(param.id){
-        const query = collection.where("category","==", parseInt(param.id));
-        const dataQuery = query.get()
-        dataQuery.then((res)=>{
-            res.forEach((doc)=>{
-                array.push(doc.data());
+        const db = firestore;
+        const collection = db.collection("Productos");
+        if(param.id){
+            const query = collection.where("category","==", parseInt(param.id));
+            const dataQuery = query.get()
+            dataQuery.then((res)=>{
+                res.forEach((doc)=>{
+                    array.push(doc.data());
+                });
+                setData(array);
             });
-            setData(array);
-        });
-    } else {
+        } else {
         const query = collection.get();
         query.then((res)=>{
             res.forEach((document)=>{

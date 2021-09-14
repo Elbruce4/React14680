@@ -25,7 +25,7 @@ const ItemDetail = ({data}) => {
             <img src={data.url} className="listaDetalle"/>
             </ul>
             <div className="contador">
-                <ItemCount stock={data.stock} initial={1} onAdd={onAdd} producto={data}/>
+                <ItemCount stock={data.stock} initial={1} onAdd={onAdd}/>
             </div>
         </div>
     );
