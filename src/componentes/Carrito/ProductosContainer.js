@@ -12,18 +12,16 @@ const ProductosContainer = () => {
     let element = 0;
     for (let i = 0; i < carrito.length; i++) {
         element = carrito[i].item.precio * carrito[i].cantidad + element;
-        console.log(element)
     }
 
     useEffect(()=>{
         setPrecioTotal(element)
-        console.log(carrito)
     },[carrito])
 
     return (
         <div>
             {carrito.map(obj => 
-                <ProductosDetail key={obj.id} data={obj} carro={carrito} />
+                <ProductosDetail key={obj.id} data={obj} />
                 )}
             {carrito.length > 0 ? <button onClick={clear}>Vaciar todo el carrito</button> :  <NavLink to="/"><button> No hay nada en el carrito... Por ahora </button></NavLink> }
             <br />

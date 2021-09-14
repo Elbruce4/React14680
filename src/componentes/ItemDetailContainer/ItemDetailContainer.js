@@ -15,15 +15,13 @@ const ItemDetailContainer = () => {
         const collection = db.collection("Productos");
         const query = collection.doc(param.id);
         const queryData = query.get();
-        console.log(queryData)
         queryData.then((res)=>{
             setProducto(res.data())})
     }, []);
 
     return (
         <div className="productos">
-           {   
-               <ItemDetail data={producto}/> } 
+               <ItemDetail data={producto}/> 
         </div>
     );
 }

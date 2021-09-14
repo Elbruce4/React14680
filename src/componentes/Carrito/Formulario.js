@@ -1,4 +1,4 @@
-import { useState , useEffect ,useContext } from "react"
+import { useState ,useContext } from "react"
 import productos from "../CardContext/Context"
 import { firestore } from "../firebase";
 
@@ -12,17 +12,15 @@ const Formulario = ({precioTotal}) => {
     const [mostrar , setMostrar ] = useState()
 
     function confirmarNombre (e) {
-        console.log(e.target.value)
         setNombre(e.target.value)
     }
     function confirmarEmail (e) {
-        console.log(e.target.value)
         setEmail(e.target.value)
     }
     function confirmarTelefono (e) {
-        console.log(e.target.value)
         setNumero(e.target.value)
     }
+
     function validarCampos () {
         if (nombre.trim().length && email.trim().length && numero.trim().length ) {
             return true
@@ -32,9 +30,8 @@ const Formulario = ({precioTotal}) => {
     }
 
     function confirmarCompra (e) {
-        e.preventDefault()
+        e.preventDefault();
         if(validarCampos()) {
-            console.log(`compra confirmada`)
             setMostrar(true)
             const nuevaOrden = {
                 buyer : buyer,
@@ -68,8 +65,8 @@ const Formulario = ({precioTotal}) => {
             <br />
             <input className="telefonoForm" type="number" placeholder="Ingrese su número telefonico" onChange={confirmarTelefono} />
             <br />
-            <button onClick={confirmarCompra}>Confirmar Datos</button>
-            {mostrar ? <p>Su compra finalizo , El número es: {id}</p> : <p>Por favor complete todos los campos</p>}
+            <button onClick={ confirmarCompra}>Confirmar Datos</button>
+            {mostrar === true ? <p>Su compra finalizo , El número es: {id}</p> : <p>Por favor complete todos los campos</p>}
 
         </form>
     )

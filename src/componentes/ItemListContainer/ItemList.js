@@ -2,12 +2,10 @@ import Item from "./Item"
 
 const ItemList = ({data}) => {
 
-    console.log(data)
-
     return (
         <ul className="productos">
             { data.map(obj =>
-                <Item data={obj}/>
+                <Item key={obj.id} data={obj}/>
             )}
         </ul>
     );

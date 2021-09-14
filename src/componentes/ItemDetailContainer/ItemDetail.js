@@ -11,7 +11,6 @@ const ItemDetail = ({data}) => {
             item : data,
             cantidad: cantidad
         }
-        console.log(item);
         isInCart(item);
     }
 

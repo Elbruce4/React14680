@@ -7,7 +7,6 @@ import productos from "../CardContext/Context";
 const CartWidget = () =>  {
 
     const {carrito} = useContext(productos)
-    console.log(carrito)
     
     return (
             <NavLink to="/cart">

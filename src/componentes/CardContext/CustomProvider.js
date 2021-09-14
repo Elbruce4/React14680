@@ -16,7 +16,6 @@ const CustomProvider = ({children}) =>{
     const removeItem = (item) => {
         const nuevoCarrito = carrito.filter(obj => obj.item.id !== item.item.id)
         setCarrito(nuevoCarrito)
-        console.log(item)
     }
 
     const removeCantidadItem = (item , stock) => {
